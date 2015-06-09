@@ -27,7 +27,8 @@ defmodule Hello.Endpoint do
   plug Plug.Head
 
   plug Plug.Session,
-    store: :cookie,
+    store: :ets,
+    table: :session,
     key: "_hello_key",
     signing_salt: "LYfOscun"
 
