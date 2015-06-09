@@ -4,6 +4,9 @@ defmodule Hello.HelloController do
   plug :action
 
   def index(conn, _params) do
-    render conn, "index.html"
+    conn = put_session(conn, :foo, "bar")
+    foo = get_session(conn, :foo)
+
+    text conn, foo
   end
 end
